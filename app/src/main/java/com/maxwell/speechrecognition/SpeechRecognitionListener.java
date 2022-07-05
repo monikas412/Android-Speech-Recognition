@@ -113,7 +113,11 @@ final class SpeechRecognitionListener implements RecognitionListener {
             Log.i(SpeechRecognitionListener.class.getSimpleName(), sentence);
             onSpeechRecognitionListener.OnSpeechRecognitionFinalResult(sentence);
 
-        }else onError(SpeechRecognizer.ERROR_NO_MATCH);
+        }else{
+            onError(SpeechRecognizer.ERROR_NO_MATCH);
+            onSpeechRecognitionListener.OnSpeechRecognitionFinalResult(sentence);
+        }
+            
     }
 
     @Override
